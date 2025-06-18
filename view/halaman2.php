@@ -21,6 +21,8 @@
 
     <a href="index.php?c=AppController&m=myTasks" class="btn btn-primary mb-3">Tugas Saya</a>
     <a href="index.php?c=AppController&m=friendTasks" class="btn btn-secondary mb-3">Tugas Teman</a>
+    <a href="#" onclick="logout()" class="btn btn-danger btn-sm float-end">Logout</a>
+
 
     <?php foreach ($groupedTasks as $category => $tasks): ?>
       <div class="mb-4">
@@ -51,5 +53,11 @@
     <?php endforeach; ?>
   </div>
 </body>
+<script>
+  function logout() {
+    localStorage.removeItem("token");
+    window.location.href = "index.php?c=AppController&m=login";
+  }
+</script>
 
 </html>

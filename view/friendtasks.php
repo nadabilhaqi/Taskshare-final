@@ -22,6 +22,8 @@
     <div class="mb-3">
       <a href="index.php?c=AppController&m=myTasks" class="btn btn-outline-primary">Tugas Saya</a>
       <a href="index.php?c=AppController&m=friendTasks" class="btn btn-primary">Tugas Teman</a>
+      <a href="#" onclick="logout()" class="btn btn-danger btn-sm float-end">Logout</a>
+
     </div>
 
     <?php if (!empty($friendTasks)): ?>
@@ -40,5 +42,11 @@
 
   </div>
 </body>
+<script>
+  function logout() {
+    localStorage.removeItem("token");
+    window.location.href = "index.php?c=AppController&m=login";
+  }
+</script>
 
 </html>
